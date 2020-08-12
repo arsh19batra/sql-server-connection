@@ -1,18 +1,14 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace proj.Models
+namespace proj.Dtos
 {
-    public class Detail
+    public class DetailCreateDto
     {
-        [Key]
-        public long Id { get; set; }
-
         [Required]
         public string Name { get; set; }
         [Required]
         public string uname { get; set; }
         [Required]
-        [MinLength(7)]
         public string password { get; set; }
     }
 }

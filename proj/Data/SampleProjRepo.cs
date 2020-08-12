@@ -5,6 +5,16 @@ namespace proj.Data
 {
     public class SampleProjRepo : IProjRepo
     {
+        public void CreateDetail(Detail dtl)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteDetail(Detail dtl)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Detail> GetAllDetails()
         {
             var Details = new List<Detail>
@@ -19,6 +29,16 @@ namespace proj.Data
         public Detail GetDetailById(int id)
         {
             return new Detail{Id=0,Name="Arsh",uname="user1"};
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateDetail(Detail dtl)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

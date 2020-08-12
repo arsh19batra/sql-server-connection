@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using proj.Data;
+using Newtonsoft.Json.Serialization;
+
 
 namespace proj
 {
@@ -33,6 +35,10 @@ namespace proj
             services.AddScoped<IProjRepo,SqlProjRepo>();
             services.AddDbContext<ProjContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("ProjConnection")));
+
+            services.AddControllers().AddNewtonsoftJson(s=>{
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
